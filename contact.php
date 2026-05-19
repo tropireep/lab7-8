@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Зв'язок з GreenTrend</title>
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=101">
 </head>
 <body style="background-color: #10180D; color: white; font-family: sans-serif;">
 
@@ -63,8 +64,61 @@
             </div>
         </div>
     </section>
-
-    <!-- Підключаємо скрипт -->
+<section class="testimonial" style="margin-top: 50px; padding: 40px 0; background-color: transparent; border-top: 1px solid #2B384C;">
+        <div class="container">
+            <h3 style="text-align: center; color: white; font-size: 28px; margin-bottom: 30px;">Відгуки наших клієнтів</h3>
+            
+            <div class="swiper" style="width: 100%; padding-bottom: 40px;">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide" style="text-align: center;">
+                        <p class="feedback" style="color: #ccc; font-size: 16px; font-style: italic; max-width: 700px; margin: 0 auto 20px; line-height: 1.5;">"Замовляю мікрозелень горошку вже третій місяць. Це просто знахідка для моїх салатів! Дуже свіжа і хрустка. Доставка завжди вчасно."</p>
+                        <p class="feedback-author" style="color: white; font-weight: bold; font-size: 18px; margin-bottom: 5px;">Марія Ткачук</p>
+                        <p class="feedback-position" style="color: #28a745; font-size: 14px;">Постійна клієнтка</p>
+                    </div>
+                    <div class="swiper-slide" style="text-align: center;">
+                        <p class="feedback" style="color: #ccc; font-size: 16px; font-style: italic; max-width: 700px; margin: 0 auto 20px; line-height: 1.5;">"Зелений шеф і редис — мої фаворити. Дуже зручно, що зелень приїжджає в еко-лотках, які можна повернути. Рекомендую всім!"</p>
+                        <p class="feedback-author" style="color: white; font-weight: bold; font-size: 18px; margin-bottom: 5px;">Олександр Коваль</p>
+                        <p class="feedback-position" style="color: #28a745; font-size: 14px;">Шеф-кухар ресторану</p>
+                    </div>
+                    <div class="swiper-slide" style="text-align: center;">
+                        <p class="feedback" style="color: #ccc; font-size: 16px; font-style: italic; max-width: 700px; margin: 0 auto 20px; line-height: 1.5;">"Неймовірна якість! Базилік та рукола мають такий насичений смак, що звичайна зелень з супермаркету тепер здається прісною. Дякую Олені!"</p>
+                        <p class="feedback-author" style="color: white; font-weight: bold; font-size: 18px; margin-bottom: 5px;">Ірина Мельник</p>
+                        <p class="feedback-position" style="color: #28a745; font-size: 14px;">Фуд-блогер</p>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script src="assets/js/script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Перевіряємо, чи завантажилась бібліотека
+            if (typeof Swiper !== 'undefined') {
+                const swiper = new Swiper(".swiper", {
+                    slidesPerView: 1,
+                    spaceBetween: 30,
+                    loop: true,
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    },
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    }
+                });
+            } else {
+                console.error("Бібліотека Swiper не завантажилась!");
+            }
+        });
+    </script>
+</body>
+</html>
 </body>
 </html>

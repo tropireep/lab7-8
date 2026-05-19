@@ -1,4 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
+    
+    // ==========================================
+    // 1. БУРГЕР-МЕНЮ
+    // ==========================================
     const burger = document.getElementById('burger-menu');
     const nav = document.querySelector('.nav');
     const body = document.body;
@@ -13,13 +17,18 @@ document.addEventListener("DOMContentLoaded", function() {
     const navLinks = document.querySelectorAll('.nav a');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            burger.classList.remove('active');
-            nav.classList.remove('active');
+            if(burger) burger.classList.remove('active');
+            if(nav) nav.classList.remove('active');
             body.classList.remove('lock');
         });
     });
+
+    // ==========================================
+    // 2. ФОРМА ПІДПИСКИ
+    // ==========================================
     const form = document.getElementById("project-form"); 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
     if (form) {
         form.addEventListener("submit", function (event) {
             event.preventDefault();
@@ -63,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
-                        form.reset(); // Очищаємо форму
+                        form.reset(); 
                         alert(data.message || "Дякуємо за підписку!");
                     } else {
                         alert(data.message || "Сталася помилка.");
@@ -79,5 +88,26 @@ document.addEventListener("DOMContentLoaded", function() {
                 this.classList.remove('error');
             });
         });
+    } // <--- ОСЬ ТУТ ЗАКРИВАЄТЬСЯ БЛОК ФОРМИ
+
+    // ==========================================
+    // 3. СЛАЙДЕР ВІДГУКІВ (SWIPER) - КОД 8.8
+    // ==========================================
+    // Спочатку перевіряємо, чи є взагалі на сторінці елемент ".swiper"
+    if (document.querySelector(".swiper")) {
+        new Swiper(".swiper", {
+            slidesPerView: 1,
+            spaceBetween: 10,
+            loop: true,
+            autoplay: {
+                delay: 1800,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            }
+        });
     }
+
 });

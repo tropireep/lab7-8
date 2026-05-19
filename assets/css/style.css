@@ -640,3 +640,85 @@ body.lock {
         justify-content: center;
     }
 }
+/* ==========================================
+   СЛАЙДЕР ВІДГУКІВ (Адаптовано для темної теми)
+   ========================================== */
+
+/* Заголовок */
+.testimonial h3 {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 48px;
+    text-align: center;
+    color: #ffffff; /* Зробили білим, щоб було видно на темному! */
+    margin-bottom: 30px;
+}
+
+/* Основний текст відгуку */
+.testimonial .feedback {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #cccccc; /* Світло-сірий, щоб легко читалося */
+    margin: 0 auto 20px;
+    max-width: 700px;
+    font-style: italic;
+    text-align: center;
+}
+
+/* Ім'я автора */
+.testimonial .feedback-author,
+.testimonial .feedback_author {
+    font-weight: bold;
+    font-size: 18px;
+    color: #ffffff; /* Білий */
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+/* Посада автора */
+.testimonial .feedback-position,
+.testimonial .feedback_position {
+    font-size: 14px;
+    color: #28a745; /* Твій фірмовий зелений */
+    text-align: center;
+}
+
+/* ==========================================
+   ПАГІНАЦІЯ (КРАПОЧКИ СЛАЙДЕРА)
+   ========================================== */
+.testimonial .swiper-pagination {
+    position: relative;
+    margin-top: 30px;
+    text-align: center;
+}
+
+/* Звичайні неактивні крапочки */
+.swiper-pagination-bullet {
+    background-color: #888 !important; 
+    opacity: 0.5 !important;
+    width: 12px !important;
+    height: 12px !important;
+    margin: 0 6px !important;
+    transition: all 0.3s ease;
+}
+
+/* Активна крапочка (зелена і витягнута) */
+.swiper-pagination-bullet-active {
+    background-color: #28a745 !important; 
+    opacity: 1 !important;
+    width: 30px !important; 
+    border-radius: 6px !important;
+}
+
+/* "Пальчик" при наведенні мишки */
+.swiper-pagination-bullet:hover {
+    cursor: pointer !important;
+    opacity: 1 !important;
+}
+
+/* Адаптивність для телефонів */
+@media screen and (max-width: 720px) {
+    .testimonial h3 {
+        font-size: 28px;
+    }
+}
