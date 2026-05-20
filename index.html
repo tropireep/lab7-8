@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<?php
-session_start();
-require_once './auth.php';
-$authText = isAuthorized() ? "Вихід (Адмін)" : "Вхід";
-$authLink = isAuthorized() ? "logout.php" : "login.php";
-?>
-
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
@@ -30,7 +23,7 @@ $authLink = isAuthorized() ? "logout.php" : "login.php";
                 <a href="#about">About us</a>
                 <a href="#services">Services</a>
                 <a href="#blog">Blog</a>
-                <a href="<?php echo $authLink; ?>" style="color: #28a745; font-weight: bold;"><?php echo $authText; ?></a>
+                <a href="login.html" style="color: #28a745; font-weight: bold;">Вхід</a>
             </nav>
             <div class="header-icons">
                 <span>🔍</span>
